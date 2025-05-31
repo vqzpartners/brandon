@@ -86,8 +86,6 @@
 
         .content-section {
             padding: 2rem 20px;
-            max-width: 600px;
-            margin: 0 auto;
             text-align: center;
         }
 
@@ -142,6 +140,10 @@
 
         .music-section {
             margin-bottom: 2rem;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .music-player {
@@ -158,6 +160,8 @@
 
         .music-player iframe {
             display: block;
+            width: 100%;
+            height: 500px;
         }
 
         footer {
@@ -179,16 +183,18 @@
 
         @media (max-width: 768px) {
             .hero-section {
-                height: 50vh;
-                max-height: 400px;
+                height: 60vh;
+                max-height: 450px;
+                padding-bottom: 3rem;
             }
 
             .username {
                 font-size: 2rem;
+                margin-bottom: 1.5rem;
             }
             
             .content-section {
-                padding: 1.5rem 15px;
+                padding: 2rem 15px;
             }
             
             .social-links {
@@ -207,16 +213,34 @@
             .social-text {
                 font-size: 12px;
             }
+
+            .music-section {
+                padding: 0 5px;
+            }
+
+            .music-player iframe {
+                height: 350px;
+            }
         }
 
         @media (max-width: 480px) {
             .hero-section {
-                height: 40vh;
-                max-height: 300px;
+                height: 50vh;
+                max-height: 350px;
+                padding-bottom: 2.5rem;
             }
 
             .username {
                 font-size: 1.8rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .music-section {
+                padding: 0 2px;
+            }
+
+            .music-player iframe {
+                height: 280px;
             }
         }
     </style>
@@ -261,7 +285,7 @@
         <div class="music-section">
             <div class="music-player">
                 <iframe width="100%" 
-                        height="315" 
+                        height="500" 
                         src="https://www.youtube-nocookie.com/embed/videoseries?si=J39KiFvW-PYcV7p6&amp;list=PLGpQi_6URYruvkgP1GNbaSCMaudBsCuRJ" 
                         title="YouTube video player" 
                         frameborder="0" 
