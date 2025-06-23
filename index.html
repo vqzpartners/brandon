@@ -35,7 +35,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a1a2e 100%);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%, #0a0a0a 100%);
             color: white;
             min-height: 100vh;
             display: flex;
@@ -582,18 +582,12 @@
             });
 
             // Store preference
-            if (typeof(Storage) !== "undefined") {
-                localStorage.setItem('preferred-language', lang);
-            }
+            localStorage.setItem('preferred-language', lang);
         }
 
         // Initialize language
         let savedLang = 'en';
-        if (typeof(Storage) !== "undefined") {
-            savedLang = localStorage.getItem('preferred-language') || detectLanguage();
-        } else {
-            savedLang = detectLanguage();
-        }
+        savedLang = localStorage.getItem('preferred-language') || detectLanguage();
         setLanguage(savedLang);
 
         // Add click listeners to language buttons
