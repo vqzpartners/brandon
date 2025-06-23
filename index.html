@@ -10,20 +10,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <meta name="title" content="BRANDON - Official Website">
-    <meta name="description" content="Brandon is a Panamanian businessman and entrepreneur who believes in the power of education as the fundamental stone for lasting change">
+    <meta name="description" content="Brandon is a Panamanian entrepreneur dedicated to reducing government inefficiency through innovative solutions and by providing quality education in Latin America and globally.">
     <meta name="keywords" content="brandon, entrepreneur, panama, education, innovation, technology">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://brandonvasp.com">
     
     <meta property="og:type" content="profile">
     <meta property="og:title" content="BRANDON - Official Website">
-    <meta property="og:description" content="Brandon is a Panamanian businessman and entrepreneur who believes in the power of education as the fundamental stone for lasting change">
+    <meta property="og:description" content="Brandon is a Panamanian entrepreneur dedicated to reducing government inefficiency through innovative solutions and by providing quality education in Latin America and globally.">
     <meta property="og:image" content="https://brandonvasp.com/get/images/social-media-banner.jpg">
     <meta property="og:url" content="https://brandonvasp.com">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BRANDON">
-    <meta name="twitter:description" content="Brandon is a Panamanian businessman and entrepreneur who believes in the power of education as the fundamental stone for lasting change">
+    <meta name="twitter:description" content="Brandon is a Panamanian entrepreneur dedicated to reducing government inefficiency through innovative solutions and by providing quality education in Latin America and globally.">
     <meta name="twitter:image" content="https://brandonvasp.com/get/images/social-media-banner.jpg">
     
     <style>
@@ -35,26 +35,49 @@
         }
 
         body {
-            background-color: #000000;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a1a2e 100%);
             color: white;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
+        /* Desktop biolink container */
+        @media (min-width: 1024px) {
+            .biolink-container {
+                max-width: 400px;
+                margin: 0 auto;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .hero-section {
+                border-radius: 20px 20px 0 0;
+            }
+            
+            .content-section {
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 0 0 20px 20px;
+            }
+        }
+
         .hero-section {
             position: relative;
             width: 100%;
-            height: 60vh;
-            max-height: 500px;
-            background-image: url('https://brandonvasp.com/get/images/brandon-v4.jpg');
+            height: 65vh; 
+            min-height: 400px;
+            background-image: url('https://brandonvasp.com/get/images/brandon.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: bottom center; /* Center positioning */
             background-repeat: no-repeat;
             display: flex;
-            align-items: flex-end;
+            align-items: flex-end; /* Move content to bottom */
             justify-content: center;
-            padding-bottom: 2rem;
+            padding: 1.5rem;
         }
 
         .hero-overlay {
@@ -75,26 +98,105 @@
             position: relative;
             z-index: 2;
             text-align: center;
+            width: 100%;
+            max-width: 1200px;
         }
 
-        .username {
-            font-size: 2.5rem;
+        .main-name {
+            font-size: 3rem;
             font-weight: 500;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-family: 'Roboto Mono', monospace;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .content-section {
             padding: 2rem 20px;
-            text-align: center;
+            text-align: left;
+        }
+
+        .business-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .business-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: left;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .business-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.4);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .business-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .business-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .business-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            color: #ccc;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
         }
 
         .social-link {
@@ -117,8 +219,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
@@ -130,17 +232,16 @@
         }
 
         .icon-circle i {
-            font-size: 28px;
+            font-size: 18px;
         }
 
         .social-text {
-            font-size: 14px;
+            font-size: 11px;
             font-weight: 500;
         }
 
         .music-section {
             margin-bottom: 2rem;
-            padding: 0 20px;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
@@ -152,6 +253,10 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
             background-color: rgba(255, 255, 255, 0.05);
             transition: border-color 0.3s ease;
+            margin-bottom: 2rem;
+            max-width: 560px; /* Standard YouTube width */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .music-player:hover {
@@ -161,7 +266,19 @@
         .music-player iframe {
             display: block;
             width: 100%;
-            height: 500px;
+            height: 215px; /* Standard YouTube height */
+        }
+
+        .channel-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 0 auto 1rem;
+            transition: all 0.3s ease;
         }
 
         footer {
@@ -181,20 +298,58 @@
             color: white;
         }
 
+        /* Hidden class for language switching */
+        .hidden {
+            display: none !important;
+        }
+
         @media (max-width: 768px) {
+            .biolink-container {
+                max-width: none !important;
+                background: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                border: none !important;
+            }
+            
             .hero-section {
-                height: 60vh;
-                max-height: 450px;
-                padding-bottom: 3rem;
+                height: 80vh; /* 80% viewport height for tablets */
+                min-height: 600px; /* Increased minimum height */
+                background-position: center 20%; /* Focus on upper portion */
+                border-radius: 0 !important;
             }
 
-            .username {
-                font-size: 2rem;
-                margin-bottom: 1.5rem;
+            .content-section {
+                background: transparent !important;
+                border-radius: 0 !important;
+            }
+
+            .main-name {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
             }
             
             .content-section {
                 padding: 2rem 15px;
+            }
+
+            .business-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 10px;
+            }
+
+            .business-card {
+                padding: 1.5rem;
+            }
+
+            .business-title {
+                font-size: 1.2rem;
+            }
+
+            .business-description {
+                font-size: 0.85rem;
             }
             
             .social-links {
@@ -218,21 +373,52 @@
                 padding: 0 5px;
             }
 
+            .music-player {
+                max-width: 100%; /* Full width on mobile */
+            }
+
             .music-player iframe {
-                height: 350px;
+                height: 250px;
+            }
+
+            .language-toggle {
+                top: 15px;
+                right: 15px;
+            }
+
+            .channel-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .channel-icon i {
+                font-size: 30px;
+            }
+
+            .channel-title {
+                font-size: 1.4rem;
+            }
+
+            .channel-description {
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 480px) {
             .hero-section {
-                height: 50vh;
-                max-height: 350px;
-                padding-bottom: 2.5rem;
+                height: 70vh; /* 70% viewport height for phones */
+                min-height: 500px; /* Increased minimum height for phones */
+                background-position: center 15%; /* Focus more on the top */
+                padding: 1.5rem;
             }
 
-            .username {
-                font-size: 1.8rem;
-                margin-bottom: 1.2rem;
+            .main-name {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .business-card {
+                padding: 1.2rem;
             }
 
             .music-section {
@@ -240,72 +426,183 @@
             }
 
             .music-player iframe {
-                height: 280px;
+                height: 200px;
             }
+
+            .personal-channel-card {
+                padding: 1.5rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .icon-circle {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .icon-circle i {
+                font-size: 20px;
+            }
+
+            .social-text {
+                font-size: 11px;
+            }
+        }
+
+        /* Ultra small screens */
+        @media (max-width: 375px) {
+            .hero-section {
+                height: 65vh;
+                min-height: 450px;
+                background-position: center 10%;
+            }
+
+            .main-name {
+                font-size: 1.8rem;
+            }
+
         }
     </style>
 </head>   
 <body>
-    <div class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="username">@brandonvasp</h1>
-        </div>
+    <div class="language-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
     </div>
 
-    <div class="content-section">
-        <div class="social-links">
-            <a href="https://brandon.launch.ink/Xa5iq1" class="social-link" target="_blank" rel="noopener noreferrer">
-                <div class="icon-circle">
-                    <i class="fab fa-instagram"></i>
+    <div class="biolink-container">
+        <div class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="main-name">BRANDON</h1>                
+                <!-- Social Media Links centered -->
+                <div class="social-links">
+                    <a href="https://brandon.launch.ink/fYqIQq" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <div class="icon-circle">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span class="social-text">Instagram</span>
+                    </a>
+                    <a href="https://brandon.launch.ink/fYqIQq" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <div class="icon-circle">
+                            <i class="fab fa-x-twitter"></i>
+                        </div>
+                        <span class="social-text">X</span>
+                    </a>
+                    <a href="https://brandon.launch.ink/lpv6lY" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <div class="icon-circle">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <span class="social-text">LinkedIn</span>
+                    </a>
+                    <a href="https://brandon.launch.ink/jBX5u5" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <div class="icon-circle">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <span class="social-text">Telegram</span>
+                    </a>
                 </div>
-                <span class="social-text">Instagram</span>
-            </a>
-            <a href="https://brandon.launch.ink/0pK55Y" class="social-link" target="_blank" rel="noopener noreferrer">
-                <div class="icon-circle">
-                    <i class="fab fa-x-twitter"></i>
-                </div>
-                <span class="social-text">X</span>
-            </a>
-            <a href="https://brandon.launch.ink/V1QR6x" class="social-link" target="_blank" rel="noopener noreferrer">
-                <div class="icon-circle">
-                    <i class="fab fa-telegram"></i>
-                </div>
-                <span class="social-text">Telegram</span>
-            </a>
-            <a href="https://brandon.launch.ink/AmgSCQ" class="social-link" target="_blank" rel="noopener noreferrer">
-                <div class="icon-circle">
-                    <i class="fab fa-bitcoin"></i>
-                </div>
-                <span class="social-text">Bitcoin</span>
-            </a>
-        </div>
-
-        <!-- Music Player Section -->
-        <div class="music-section">
-            <div class="music-player">
-                <iframe width="100%" 
-                        height="500" 
-                        src="https://www.youtube-nocookie.com/embed/videoseries?si=J39KiFvW-PYcV7p6&amp;list=PLGpQi_6URYruvkgP1GNbaSCMaudBsCuRJ" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
-                </iframe>
             </div>
         </div>
 
-        <footer>
-            <p>© <span id="year"></span> BRANDON</p>
-        </footer>
+        <div class="content-section">
+            <!-- Business Cards Section -->
+            <div class="business-cards">
+                <a href="https://brandon.launch.ink/cDmXxf" class="business-card" target="_blank" rel="noopener noreferrer">
+                    <img src="https://brandonvasp.com/get/images/vqzpartners.jpg" alt="VQZ & Partners" class="business-logo">
+                    <h3 class="business-title" data-en="VQZ & Partners" data-es="VQZ & Partners">VQZ & Partners</h3>
+                    <p class="business-description" 
+                       data-en="Strategic innovation solutions for finance, tech and education across Latin America and globally."
+                       data-es="Soluciones estratégicas de innovación para finanzas, tecnología y educación en América Latina y globalmente.">
+                       Strategic innovation solutions for finance, tech and education across Latin America and globally.
+                    </p>
+                </a>
+
+                <a href="https://brandon.launch.ink/ecTF2Z" class="business-card" target="_blank" rel="noopener noreferrer">
+                    <img src="https://brandonvasp.com/get/images/doctoresclub.jpg" alt="Doctores Club" class="business-logo">
+                    <h3 class="business-title" data-en="Doctores Club" data-es="Doctores Club">Doctores Club</h3>
+                    <p class="business-description" 
+                       data-en="Join our exclusive community of doctors optimizing their practice."
+                       data-es="Únete a nuestra comunidad exclusiva de doctores optimizando su práctica.">
+                        Join our exclusive community of doctors optimizing their practice.
+                    </p>
+                </a>
+            </div>
+
+            <!-- Music Player Section -->
+            <div class="music-section">
+                <div class="music-player">
+                    <iframe width="100%" 
+                            height="315" 
+                            src="https://www.youtube-nocookie.com/embed/videoseries?si=O6MGDWa4bTXjq4hE&amp;list=PLoTxX0xjgtH9freMEgvdFA9bZ1aL9HyQY" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+
+            <footer>
+                <p>© <span id="year"></span> BRANDON</p>
+            </footer>
+        </div>
     </div>
     
     <script>
         // Dynamic copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Language detection and switching
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const elementsWithLang = document.querySelectorAll('[data-en], [data-es]');
+
+        // Detect browser language
+        function detectLanguage() {
+            const browserLang = navigator.language || navigator.languages[0];
+            return browserLang.startsWith('es') ? 'es' : 'en';
+        }
+
+        // Set language content
+        function setLanguage(lang) {
+            elementsWithLang.forEach(element => {
+                const content = element.getAttribute(`data-${lang}`);
+                if (content) {
+                    element.textContent = content;
+                }
+            });
+
+            // Update active button
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Store preference
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem('preferred-language', lang);
+            }
+        }
+
+        // Initialize language
+        let savedLang = 'en';
+        if (typeof(Storage) !== "undefined") {
+            savedLang = localStorage.getItem('preferred-language') || detectLanguage();
+        } else {
+            savedLang = detectLanguage();
+        }
+        setLanguage(savedLang);
+
+        // Add click listeners to language buttons
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                setLanguage(button.dataset.lang);
+            });
+        });
     </script>
-    <script src="bubble.js"></script>
     <script src="analytics.js"></script>    
 </body>
 </html>
